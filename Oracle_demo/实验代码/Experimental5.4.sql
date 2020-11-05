@@ -68,5 +68,21 @@
 --     )
 -- values (teacher_seq.nextval,'tian','woman',26);
 
+insert into course
+    (
+        cno,
+        cname,
+        cteacher
+    )
+values (course_seq.nextval,'Oracle','li');
+
+
+insert into course
+    (
+        cno,
+        cname,
+        cteacher
+    )
+values (course_seq.nextval,'Mysql','tian');
 
 
