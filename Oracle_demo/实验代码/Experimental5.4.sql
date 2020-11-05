@@ -68,21 +68,64 @@
 --     )
 -- values (teacher_seq.nextval,'tian','woman',26);
 
-insert into course
-    (
-        cno,
-        cname,
-        cteacher
-    )
-values (course_seq.nextval,'Oracle','li');
+-- insert into course
+--     (
+--         cno,
+--         cname,
+--         cteacher
+--     )
+-- values (course_seq.nextval,'Oracle','li');
 
 
-insert into course
+-- insert into course
+--     (
+--         cno,
+--         cname,
+--         cteacher
+--     )
+-- values (course_seq.nextval,'Mysql','tian');
+
+
+insert into grade
     (
         cno,
-        cname,
-        cteacher
+        sno,
+        grade
     )
-values (course_seq.nextval,'Mysql','tian');
+values (1,2001,90);
+
+insert into grade
+    (
+        cno,
+        sno,
+        grade
+    )
+values (1,2002,99);
+
+insert into grade
+    (
+        cno,
+        sno,
+        grade
+    )
+values (1,2003,60);
+
+insert into grade
+    (
+        cno,
+        sno,
+        grade
+    )
+values (2,2004,79);
+
+insert into grade
+    (
+        cno,
+        sno,
+        grade
+    )
+values (2,2005,98);
+
+
 
 
