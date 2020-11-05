@@ -50,22 +50,23 @@
 -- values (student_seq.nextval,'xu','man',21,'two class');
 
 -- select * from student;
+-- insert into TEACHER
+--     (
+--         tno,
+--         tname,
+--         tsex,
+--         tage
+--     )
+-- values (teacher_seq.nextval,'li','man',56);
 
-insert into student
-    (
-       tno,
-       tname,
-       tsex,
-       tage
-    )
-values (teacher_seq.nextval,'li','man',41);
+-- insert into teacher
+--     (
+--         tno,
+--         tname,
+--         tsex,
+--         tage
+--     )
+-- values (teacher_seq.nextval,'tian','woman',26);
 
-insert into student
-    (
-       tno,
-       tname,
-       tsex,
-       tage
-    )
-values (teacher_seq.nextval,'zhen','woman',31);
+
 
