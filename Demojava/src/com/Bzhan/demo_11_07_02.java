@@ -15,6 +15,7 @@ import java.io.IOException;
  */
 public class demo_11_07_02 {
     public static void main(String[] args) throws IOException {
+        long s=System.currentTimeMillis();
         FileInputStream fis=new FileInputStream("src\\File\\1.jpg");
         FileOutputStream fos=new FileOutputStream("src\\File\\2.jpg");
  /*       //一次读取一个字节
@@ -33,5 +34,7 @@ public class demo_11_07_02 {
         //先关闭写流
         fos.close();
         fis.close();
+        long e=System.currentTimeMillis();
+        System.out.println("复制文件共耗时："+(e-s)+"毫秒");
     }
 }
