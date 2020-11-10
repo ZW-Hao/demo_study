@@ -1,9 +1,10 @@
+
 package 人工智能;
 
-import java.text.DecimalFormat;
-import java.util.Random;
+        import java.text.DecimalFormat;
+        import java.util.Random;
 
-import static java.lang.System.arraycopy;
+        import static java.lang.System.arraycopy;
 
 //遗传算法实现
 //p89页算法实现y=x^2在0—31上的最大值
@@ -14,10 +15,10 @@ public class GeneticAlgorithm {
         Random r=new Random();
         int x=0;//变异率，当累积到10的时候发生变异
         //生成初始种群，数组存储
-         int[] a={0,1,1,0,1};//13
-         int[] b={1,1,0,0,0};//24
-         int[] c={0,1,0,0,0};//8
-         int[] d={1,0,0,1,1};//19
+        int[] a={0,1,1,0,1};//13
+        int[] b={1,1,0,0,0};//24
+        int[] c={0,1,0,0,0};//8
+        int[] d={1,0,0,1,1};//19
         double r1=0.450126;
         double r2=0.110347;
         double r3=0.572496;
@@ -226,10 +227,10 @@ public class GeneticAlgorithm {
         for (int i = 0; i < count.length; i++) {
             //标记选中次数为0和2的种群
             if(count[i]==0){
-                 flagzero=i;
+                flagzero=i;
             }
             if(count[i]==2){
-                 flagtwo=i;
+                flagtwo=i;
             }
         }
 //        copy(c,b);
