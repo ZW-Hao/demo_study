@@ -7,7 +7,15 @@
 -- from v1,student
 -- where ssex='woman' and v1.sno=student.sno;
 
-select count(cname)
-from v1
-where grade<60
-group by cno;
+
+
+-- select count(cname)
+-- from v1
+-- where grade>60 or grade=60
+-- group by cno;
+
+
+drop table teacher;
+drop table grade;
+drop table student;
+drop table course;
