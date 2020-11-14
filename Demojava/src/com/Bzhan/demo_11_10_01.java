@@ -43,6 +43,7 @@ public class demo_11_10_01 {
     private static void write_utf_8() throws IOException {
         OutputStreamWriter osw=new OutputStreamWriter(new FileOutputStream("src\\File\\f.txt"),"gbk");
         osw.write("你好");
+
         osw.flush();
         osw.close();
     }

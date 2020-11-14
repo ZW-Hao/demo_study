@@ -29,6 +29,7 @@ public class demo_11_07_02 {
         int len=0;
         while((len=fis.read(b))!=-1){
             fos.write(b,0,len);
+
         }
 
         //先关闭写流

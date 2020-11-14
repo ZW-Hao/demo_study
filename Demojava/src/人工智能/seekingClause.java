@@ -19,7 +19,7 @@ public class seekingClause {
         //String weicigongshi=inputweici();
         //System.out.println(weicigongshi);
         //String str="A > B";
-
+        String str=if_yunhan("A->B");
 
 
     }

@@ -9,8 +9,10 @@ import javax.swing.CellEditor;
  */
 public class PredicateLogic {
 
-    public static String predicateTextPremise = "(@x){($y)[S(x,y)^M(y)]→($z)[I(z)^E(x,z)]}";// 前提
-    public static String predicateTextConclusion = "[~($z)I(z)]→{(@x)(@y)[M(y)→~S(x,y)]}";// 结论
+    //public static String predicateTextPremise = "(@x){($y)[S(x,y)^M(y)]→($z)[I(z)^E(x,z)]}";// 前提
+    public static String predicateTextPremise = "(@x){(@y)[P(x,y)]→(@y)[Q(x)->R(x,y)]}";// 前提
+
+    //public static String predicateTextConclusion = "[~($z)I(z)]→{(@x)(@y)[M(y)→~S(x,y)]}";// 结论
 
     /**
      * 主函数
@@ -21,31 +23,31 @@ public class PredicateLogic {
         // PredicateLogic predicateLogic = new PredicateLogic();
         System.out.println("消除蕴含:");
         predicateTextPremise = EliminateContains(predicateTextPremise);
-        predicateTextConclusion = EliminateContains(predicateTextConclusion);
+        //predicateTextConclusion = EliminateContains(predicateTextConclusion);
         System.out.println();
 
         System.out.println("缩小否定符号的辖域:");
         predicateTextPremise = shrinkNotSign(predicateTextPremise);
-        predicateTextConclusion = shrinkNotSign(predicateTextConclusion);
+//        predicateTextConclusion = shrinkNotSign(predicateTextConclusion);
         System.out.println();
 
         System.out.println("对变量进行换名(本题没体现):");
         System.out.println("所有量词等值左移并消去:");
         predicateTextPremise = TransiformPrenexNormalForm(predicateTextPremise);
-        predicateTextConclusion = TransiformPrenexNormalForm(predicateTextConclusion);
+//        predicateTextConclusion = TransiformPrenexNormalForm(predicateTextConclusion);
         System.out.println();
 
         System.out.println("化为合取范式，求出子句集:");
         predicateTextPremise = getClauseSet(predicateTextPremise);
-        predicateTextConclusion = getClauseSet(predicateTextConclusion);
+//        predicateTextConclusion = getClauseSet(predicateTextConclusion);
         System.out.println();
 
-        System.out.println("合并子句集(结论子句集要取反):");
+        /*System.out.println("合并子句集(结论子句集要取反):");
         String clauseSet = mergeClauseSet();// 获得子句集
         System.out.println();
 
         System.out.println("对子句集进行归结:");
-        resolution(clauseSet);//归结
+        resolution(clauseSet);//归结*/
 
     }
 
@@ -53,7 +55,7 @@ public class PredicateLogic {
      * 归结
      *
      * @param text
-     */
+     *//*
     private static void resolution(String text) {
         text = text.replace("{", "");
         text = text.replace("}", "");
@@ -115,7 +117,7 @@ public class PredicateLogic {
             System.out.println("归结结果不为空");
         }
 
-    }
+    }*/
 
     /**
      *
@@ -377,9 +379,9 @@ public class PredicateLogic {
         return res;
     }
 
-    /**
+   /* *//**
      * 合并子句集
-     */
+     *//*
     private static String mergeClauseSet() {
         String res = predicateTextPremise;
         String temp = predicateTextConclusion;
@@ -399,6 +401,6 @@ public class PredicateLogic {
         System.out.println("合并子句集:" + res);
         return res;
 
-    }
+    }*/
 
 }
