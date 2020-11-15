@@ -9,8 +9,9 @@ import javax.swing.CellEditor;
  */
 public class PredicateLogic {
 
-    //public static String predicateTextPremise = "(@x){($y)[S(x,y)^M(y)]→($z)[I(z)^E(x,z)]}";// 前提
-    public static String predicateTextPremise = "(@x){(@y)[P(x,y)]→(@y)[Q(x)->R(x,y)]}";// 前提
+    public static String predicateTextPremise = "(@x){($y)[S(x,y)^M(y)]→($z)[I(z)^E(x,z)]}";// 前提
+    //public static String predicateTextPremise = "(@x){(@y)[P(x,y)]→(@y)[Q(x)->R(x,y)]}";// 前提
+    //public static String predicateTextPremise = "p(x)->s(x)";// 前提
 
     //public static String predicateTextConclusion = "[~($z)I(z)]→{(@x)(@y)[M(y)→~S(x,y)]}";// 结论
 
