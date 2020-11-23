@@ -13,6 +13,7 @@ public class consumerdemo {
 
     public static void main(String[] args) {
         method("赵丽颖",(String name)->{
+
             //对传递的字符串进行消费
             System.out.println(name);
         });

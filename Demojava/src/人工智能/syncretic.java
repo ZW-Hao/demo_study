@@ -18,26 +18,62 @@ public class syncretic {
 
     public static void main(String[] args) {
         //将集合中的元素存储起来
-        gongshi_one.add("a");
+        /*gongshi_one.add("a");
         gongshi_one.add("x");
         gongshi_one.add("f(g(y))");
         gongshi_two.add("z");
         gongshi_two.add("h(z,u)");
-        gongshi_two.add("f(u)");
-        //显示公式集
+        gongshi_two.add("f(u)");*/
 
+        gongshi_one.add("u");
+        gongshi_one.add("y");
+        gongshi_one.add("g(y)");
+        gongshi_two.add("x");
+        gongshi_two.add("f(u)");
+        gongshi_two.add("z");
+        //显示公式集
+        System.out.println("给定的元素集");
         showFormulaSet();
+        System.out.println("===============================");
 
 
         //找出第一个元素的替换
         tihuan(0);
+        System.out.println("替换规则：");
         showtihuan();
         qiuxingongshi();
+        System.out.println("替换后形成的新元素集：");
         showFormulaSet();
-
         //判断是否为单元素集
         if_danyuansuji();
+        System.out.println("===============================");
+
+        //找出第二个元素的替换
+        tihuan(1);
+        System.out.println("替换规则：");
+        showtihuan();
+        qiuxingongshi();
+        System.out.println("替换后形成的新元素集：");
+        showFormulaSet();
+        //判断是否为单元素集
+        if_danyuansuji();
+        System.out.println("===============================");
+
+        //找出第二个元素的替换
+        tihuan(2);
+        System.out.println("替换规则：");
+        showtihuan();
+        qiuxingongshi();
+        System.out.println("替换后形成的新元素集：");
+        showFormulaSet();
+        //判断是否为单元素集
+        if_danyuansuji();
+        System.out.println("===============================");
+
+        System.out.println("找到最一般合一：");
+        showtihuan();
     }
+
 
     private static void qiuxingongshi() {
         //遍历gongshione 和 gongshitwo，如果存在和替换规则中的键相同的字符，则将其替换为相应的值
@@ -129,36 +165,123 @@ public class syncretic {
             String[] strsplittwo=gongshi_two.get(num).split("");
             //判断是否为变量
             boolean flagone=false;
+            boolean flag=false;//判断变量是否被一个函数包围，如果变量周围是一个函数，则将其整体表示在差异集中
+            int count=0;
             for (int i = 0; i < strsplitone.length; i++) {
-                if(strsplitone[i].equals("x")||
-                    strsplitone[i].equals("y")||
-                        strsplitone[i].equals("z")
-                ){
-                    flagone=true;//如果存在着变量，置为true
+                if(strsplitone[i].equals("f")||strsplitone[i].equals("g")){
+                    count++;
                 }
+            }
+            if(count>=2){
+                flag=true;
             }
 
-            boolean flagtwo=false;
-            for (int i = 0; i < strsplittwo.length; i++) {
-                if(strsplittwo[i].equals("x")||
-                        strsplittwo[i].equals("y")||
-                        strsplittwo[i].equals("z")
-                ){
-                    flagtwo=true;//如果存在着变量，置为true
+            if(!flag){
+                for (int i = 0; i < strsplitone.length; i++) {
+                    if(strsplitone[i].equals("x")||
+                            strsplitone[i].equals("y")||
+                            strsplitone[i].equals("z")
+                    ){
+                        flagone=true;//如果存在着变量，置为true
+                    }
                 }
+
+                boolean flagtwo=false;
+                for (int i = 0; i < strsplittwo.length; i++) {
+                    if(strsplittwo[i].equals("x")||
+                            strsplittwo[i].equals("y")||
+                            strsplittwo[i].equals("z")
+                    ){
+                        flagtwo=true;//如果存在着变量，置为true
+                    }
+                }
+                //差异集中如果存在两个函数，需要单独判断替换规则
+
+                //对差异集中没有两个函数时变量的处理，找出替换规则
+                if(flagone && !flagtwo){
+                    o.put(gongshi_one.get(num),gongshi_two.get(num));
+                }
+                if(!flagone && flagtwo){
+                    o.put(gongshi_two.get(num),gongshi_one.get(0));
+                }
+            }else{
+                //对最后一种的处理操作
+
+                //找出差异集
+                if(strsplitone.length>strsplittwo.length){
+                    String strone="";
+                    String strtwo="";//存储差异集
+                    //消去两个表达式中相同的元素，判断相同元素时只能消去一个元素
+                    //消去左右括号时要判断，只能消去一个
+                    for (int i = 0; i < strsplittwo.length; i++) {
+                        for (int j = 0; j < strsplitone.length; j++) {
+                            if(strsplitone[j].equals(strsplittwo[i])){
+                                strsplitone[j]="";
+                                strsplittwo[i]="";
+                                break;
+                            }
+                        }
+                    }
+                    for (int i = 0; i < strsplitone.length; i++) {
+                        strone=strone+strsplitone[i];
+                    }
+                    for (int i = 0; i < strsplittwo.length; i++) {
+                        strtwo=strtwo+strsplittwo[i];
+                    }
+
+                    /*System.out.println("====");
+                    System.out.println(strone);
+                    System.out.println(strtwo);
+                    System.out.println("====");*/
+                    boolean flagthree=false;
+                    boolean flagfour=false;
+                    for (int i = 0; i < strone.toCharArray().length; i++) {
+                        if(strone.toCharArray()[i]=='f'||
+                                strone.toCharArray()[i]=='g'||
+                                strone.toCharArray()[i]=='h'
+                        ){
+                            flagthree=true;
+                        }
+                    }
+
+                    for (int i = 0; i < strtwo.toCharArray().length; i++) {
+                        if(
+                                strtwo.toCharArray()[i]=='f'||
+                                        strtwo.toCharArray()[i]=='g'||
+                                        strtwo.toCharArray()[i]=='h'
+
+                        ){
+                            flagfour=true;
+                        }
+                    }
+
+                    if(flagthree&&!flagfour){//strone中有函数，strsplitone中有函数，将strsplittwo中的变量替换
+                        o.put(strtwo,strone);
+                    }
+
+                }else{
+                    // TODO: 2020/11/18 当strsplittwo[2] 比strsplitone[2]中字符数多的时候，和if中的代码一致，换一下变量就行
+                }
+
             }
-            //对变量的处理，找出替换规则
-            if(flagone && !flagtwo){
-                o.put(gongshi_one.get(num),gongshi_two.get(num));
-            }
-            if(!flagone && flagtwo){
-                o.put(gongshi_two.get(num),gongshi_one.get(0));
-            }
+
+
+
 
 
         }
     }
 
+    /*private static void jiancha(){
+        Set<String> keys=o.keySet();
+        for(String keyone:keys){
+            for(String keytwo:keys){
+                if(o.get(keytwo).equals(keyone)){
+
+                }
+            }
+        }
+    }*/
     private static void if_danyuansuji() {
         if(gongshi_one.get(0).equals(gongshi_two.get(0))
                 &&gongshi_one.get(1).equals(gongshi_two.get(1))

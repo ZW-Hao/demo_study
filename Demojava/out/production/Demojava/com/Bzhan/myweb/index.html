@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>海南介绍</title>
+    <style>
+        body {
+            margin: 0px;
+            padding: 0px;
+            background:url(image\background.jpg);
+        }
+
+        #container {
+            width: 100%;
+            height: 100%;
+            /* background: rgb(116, 116, 60); */
+            
+            position: absolute;
+           
+        }
+
+        #header {
+            top: 1%;
+            width: 100%;
+            height: 200px;
+            /* background: tomato; */
+            position: absolute;
+        }
+
+        #logo {
+            display: inline-block;
+            left: 1%;
+            width: 20%;
+            height: 150px;
+            /* background: black; */
+            position: relative;
+        }
+
+        #banner {
+            display: inline-block;
+            left: 3%;
+            width: 75%;
+            height: 150px;
+            /* background: black; */
+            position: relative;
+        }
+
+        #menu {
+
+            left: 1%;
+            width: 90%;
+            height: 30px;
+            text-align: center;
+            background: rgb(143, 148, 143);
+            position: relative;
+        }
+        #daohang{
+            text-align: center;
+        }
+
+        #pagebody {
+            margin: 0px;
+            padding: 0px;
+            position: absolute;
+            top: 28%;
+            width: 100%;
+            height: 510px;
+            /* background: blueviolet; */
+        }
+
+        #sidebody {
+            margin: 0px;
+            padding: 0px;
+            display: inline-block;
+            left: 1%;
+            width: 20%;
+            height: 485px;
+            background: white;
+            position: relative;
+            vertical-align: top;
+        }
+
+        #denglu {
+           
+            margin: 0px;
+            padding: 0px;
+            
+            width: 100%;
+            height: 150px;
+            background: rgb(162, 180, 135);
+            position: relative;
+        }
+        #denglu input{
+            margin: 10px;
+            padding: 6px;
+        }
+        #liuyanban {
+            background: grey;
+        }
+
+        #mainbody {
+            margin: 0px;
+            padding: 0px;
+            display: inline-block;
+            left: 3%;
+            width: 75%;
+            height: 500px;
+            /* background: black; */
+            position: relative;
+            vertical-align: top;
+        }
+
+        #footer {
+            position: absolute;
+            bottom: 1%;
+            width: 100%;
+            height: 40px;
+            background: rgb(155, 195, 233)
+
+        }
+
+        button {
+            border: none;
+            background-color: transparent;
+            /* outline: none; */
+        }
+    </style>
+    <script>
+       function change(){
+           var x=document.getElementById('mainbody').getAttribute('src');
+           document.getElementById('mainbody').src='image\logo.jpg';
+       }
+        
+        
+    </script>
+</head>
+
+<body>
+    <div id="container">
+        <img src="image\background.jpg" width="1435" height="800">
+        <div id="header">
+            <div id="logo">
+                <img src="image\logo.jpg" alt="" width="300px" height="150px">
+            </div>
+            <div id="banner">
+                <img src="image\banner.jpg" alt="" width="1000px" height="150px">
+            </div>
+            <div id="menu">
+                <p id="daohang">
+                    <a href="image\jieshao.jpg" target="show">网站首页</a>|
+                    <a href="image\ditu.jpg" target="show">海南地图</a>|
+                    <a href="image\jingdian.jpg" target="show">海南景点</a>|
+                    <a href="image\meishi.jpg" target="show">海南美食</a>|
+                    <a href="image\techan.jpg" target="show">海南特产</a>|
+                    <a href="image\jiaotong.jpg" target="show">交通指南</a>|
+                    <a href="image\zhuyi.jpg" target="show">注意事项</a>|
+                    <a href="image\lianxiwomen.jpg" target="show">联系我们</a>|
+                    
+            
+                </p>
+            </div>
+        </div>
+        <div id="pagebody">
+            <div id="sidebody">
+                <div id="denglu">
+                    用户名：&nbsp;<input type="text"><br><br>
+                    密码： &nbsp;&nbsp;&nbsp;<input type="text"><br><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    
+                    <input type="button" value="登录">
+                </div>
+                <p>留言板</p>
+                <textarea name="留言板" id="liuyanban" cols="39" rows="18">
+    欢迎大家来到我的主页，这是一个关于我美丽的家乡的网站，希望它能让大家了解到美丽的海南岛。
+                </textarea>
+            </div>
+            
+            <div id="mainbody">
+               
+                <iframe name="show" width="1050" height="500"></iframe>
+            </div>  
+            
+            
+        </div>
+        <div id="footer">
+            <p>版权归XXX所有，禁止复制</p>
+        </div>
+    </div>
+</body>
+
+</html>

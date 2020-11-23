@@ -463,8 +463,4 @@ public class seekingClause {
         str=strone;
     }
 
-
-
-
-
 }

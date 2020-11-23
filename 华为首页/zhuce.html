@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>注册页面</title>
+</head>
+<style>
+    .title{
+        width: 100%;
+        height: auto;
+        overflow: hidden;
+        
+    }
+    .title img{
+        float: left;
+        margin-left: 60px;
+        margin-top: 18px;
+    }
+    .ul_title{
+        height: auto;
+        float: left;
+    }
+    .ul_title li{
+        color: #404040;
+        list-style: none;
+        float: left;
+        margin-left: 30px;
+        height: 80px;
+        line-height: 80px;
+    }
+    .ul_title li a{
+        color: #404040;
+        list-style: none;
+        float: left;
+        height: 80px;
+        line-height: 80px;
+    }
+    
+    #li_last{
+        color: #757575;
+        margin-left: 50px;
+        
+    }
+    .li_last :hover{
+        color: #E60012;
+    }
+    .ul_title li:hover{
+        color: #E60012;
+    }
+    .in_title{
+        width: 120px;
+        height: 20px;
+        line-height: 20px;
+        color: #757575;
+        margin-top: 30px;
+        margin-left: 100px;
+        float: left;
+    }
+
+    .sousuo_div button{
+        width: 45px;
+        height: 25px;
+        line-height: 20px;
+        float: left;
+        margin-top: 30px;
+       
+        color:black;
+    }
+    
+
+    .bottomone{
+        margin-top: 10px;
+    }
+     .bottomone b{
+        float: left;
+        display: block;
+        width: 100px;
+        padding: 65px;
+        color: #404040;
+        list-style: none;
+        margin-left: 30px;
+        
+    }
+    .bottomone span{
+        
+        float: left;
+        display: block;
+        width: 100px;
+        padding-top: 20px;
+        padding-left:65px ;
+        padding-right: 65px ;
+        color: #404040;
+        list-style: none;
+        margin-left: 30px;
+        line-height: 20px; 
+    } 
+    .bottomtwo span{
+        
+        float: left;
+        display: block;
+        width: 1000px;
+        padding-top: 20px;
+        padding-left:35px ;
+        padding-right: 65px ;
+        color: #404040;
+        list-style: none;
+        margin-left: 30px;
+        line-height: 20px; 
+    } 
+
+    #zhucebox{
+        background-color: #e2dfdf;
+        padding: 50px;
+        margin: 50px;
+    }
+    #zhucebox h5{
+        margin-bottom: 1px;
+        margin-left: 60%;
+    }
+    #zhucebiaodan{
+        margin-left: 50%;
+    }
+    #zhucebiaodan input{
+        padding: 10px;
+        margin: 10px;
+    }
+    #zhucetupian{
+        margin-left: 20%;
+    }
+</style>
+<body>
+    <div class="title">
+        <img src="webimage/biaozhi.png" alt="picture1"/>
+        <ul class="ul_title">
+            <!-- 登陆后超链接有效 -->
+            <li><a href="">首页</a> </li>
+            <li><a href="">智能手机</a> </li>
+                <li><a href="">笔记本</a> </li>
+                <li><a href="">平板</a></li>
+                <li><a href="">穿戴设备</a> </li>
+                <li><a href="">更多产品</a></li>
+                <li><a href="">EMUI11</a></li>
+                <li><a href="">关于华为</a></li>
+                <li id="li_last"> <a href="denglu.html">登录</a> </li>
+                <li id="li_last"><a href="zhuce.html">注册</a> </li>
+        </ul>
+        <input class="in_title" type="text" value="&nbsp;&nbsp;mate 40pro"/>
+        <div class="sousuo_div">
+            <button>搜索</button>
+        </div>
+    </div>
+
+
+
+    <!-- 注册页面 -->
+    <div id="zhucebox">
+        <div id="zhucetupian">
+            <img src="webimage\mate40.png" alt="" height="350px">
+            <img src="webimage\mate40pro.png" alt="" height="350px">
+            
+        </div>
+        <div id="zhucebiaodan">
+            <form action="zhuce.php" method="get">
+                姓名:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="name">
+                电子邮箱:<input type="text" name="email"><br>
+                注册账号:<input type="text" name="account">
+                账号密码:<input type="text" name="password"><br>
+                <input type="submit" value="注册">
+            </form>
+        </div>
+        <h5>务必请记住注册的账号和密码，登陆时需要填写</h5>
+    </div>
+
+    <!-- 底部介绍 -->
+    <div>
+        <hr style="width: 95%;">
+        <div class="bottomone">  <b>购买产品</b> <b>服务与支持</b> <b>应用与下载</b> <b>新闻中心</b> <b>关于我们</b> </div>
+        <div class="bottomone"> <span>手机</span><span >保修政策</span><span>终端云服务</span><span>华为新闻</span><span>关于我们</span></div>
+        <div class="bottomone"> <span>笔记本</span><span>预约服务</span><span>PC软件</span><span>华为视频</span><span>生态合作伙伴</span></div>
+        <div class="bottomone"> <span>平板</span><span>EMUI产品</span><span>预制应用公示</span><span></span><span>可持续发展</span></div>
+        <div class="bottomone"> <span>智慧屏</span><span>保修查询</span><span>店面元素下载</span><span></span><span>华为商城</span></div>
+        <div class="bottomone"> <span>穿戴</span><span>维修价格</span><span>终端云服务</span><span></span><span>华为云</span></div>
+        <div class="bottomone"> <span>音频</span><span>维修进度</span><span></span><span></span><span>华为集团</span></div>
+        <div class="bottomone"> <span>路由器</span><span>联系我们</span><span></span><span></span><span>加入华为</span></div>
+        
+    </div>
+    
+    <div class="bottomtwo">
+        
+        <span><br><br><br> 版权所有@华为终端有限公司1998——2020.保留一切权利。粤A2—20044005号</span>
+    </div>
+</body>
+</html>

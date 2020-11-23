@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>华为智能手机官网</title>
+    <!-- <link rel="stylesheet" href="huawei.css"/> -->
+    <style>
+        .title{
+            width: 100%;
+            height: auto;
+            overflow: hidden;
+            
+        }
+        .title img{
+            float: left;
+            margin-left: 60px;
+            margin-top: 18px;
+        }
+        .ul_title{
+            height: auto;
+            float: left;
+        }
+        .ul_title li{
+            color: #404040;
+            list-style: none;
+            float: left;
+            margin-left: 30px;
+            height: 80px;
+            line-height: 80px;
+        }
+        .ul_title li a{
+            color: #404040;
+            list-style: none;
+            float: left;
+            height: 80px;
+            line-height: 80px;
+        }
+        
+        #li_last{
+            color: #757575;
+            margin-left: 50px;
+            
+        }
+        .li_last :hover{
+            color: #E60012;
+        }
+        .ul_title li:hover{
+            color: #E60012;
+        }
+        .in_title{
+            width: 120px;
+            height: 20px;
+            line-height: 20px;
+            color: #757575;
+            margin-top: 30px;
+            margin-left: 100px;
+            float: left;
+        }
+
+        .sousuo_div button{
+            width: 45px;
+            height: 25px;
+            line-height: 20px;
+            float: left;
+            margin-top: 30px;
+           
+            color:black;
+        }
+        
+        #container {
+            width: 1400px;
+            height: 500px;
+            overflow: hidden;
+        }
+        
+        #photo {
+            width: 4200px;
+            animation: switch 10s ease-out infinite;
+        }
+        
+        #photo > img {
+            float: left;
+            width: 1400px;
+            height: 500px;
+        }
+        
+        @keyframes switch {
+            0%, 25% {
+                margin-left: 0;
+            }
+            35%, 60% {
+                margin-left: -1400px;
+            }
+            70%, 100% {
+                margin-left: -2800px;
+            }
+        }
+        .center_2{
+            width: 100%;
+            height: auto;
+            overflow: hidden;
+            background-color: #C8C8C8;
+            margin-top: 5px;
+        }
+        .center_2 img{
+            width: 49%;
+            margin-left: 5px;
+            float: left;
+        }
+
+
+        .center_3{
+            background-color: rgba(35, 35, 35, 0.94);
+            width: 100%;
+            height: auto;
+            overflow: hidden;
+            color: #cccccc;
+        }
+        .center_3 h2{
+            text-align: center;
+            height: 180px;
+            line-height: 180px;
+        }
+        .center_3_left{
+            margin-left: 230px;
+        }
+        .center_3_left,.center_3_center,.center_3_right{
+            width: 300px;
+            height: 70px;
+            text-align: center;
+            border-right: 1px solid #4e4e4e;
+            float: left;
+        }
+        .center_3_left_1{
+            font-size: 30px;
+            height: 50px;
+            line-height: 50px;
+            /*border: 1px solid red;*/
+        }
+        .center_3_left_2{
+            font-size: 15px;
+        }
+        .center_3_under{
+            clear: both;
+            width: 66%;
+            height: auto;
+            overflow: hidden;
+            line-height: 180px;
+            /*border: 1px solid red;*/
+            margin: 0 auto;
+        }
+        .center_3_under select{
+            border: 1px solid #515151;
+            appearance:none;
+            /*-moz-appearance:none;*/
+            -webkit-appearance:none;
+            width: 28%;
+            height: 30px;
+            font-size: 18px;
+            background-color: #2d2d2d;
+            color: #bebebe;
+            margin-left: 28px;
+        }
+        .center_3_text{
+            width: 99%;
+            height: 100px;
+            line-height: 100px;
+            text-align: center;
+            /*border: 1px solid silver;*/
+            margin-top: -40px;
+        }
+        .center_3_input{
+            width: 120px;
+            height: 30px;
+            background-color: #2b2b2b;
+            border: 1px solid #cccccc;
+            color: #bebebe ;
+            text-align: center;
+        }
+        .center_3_text span{
+            font-size: 12px;
+            margin: 0 10px;
+        }
+        .center_3_last{
+            width: 100%;
+            height: auto;
+            overflow: hidden;
+            background-color: #222222;
+            padding-top: 8px;
+        }
+        .center_3_last_1,.center_3_last_2,.center_3_last_3{
+            width: 28%;
+            height: auto;
+            overflow: hidden;
+            margin-left: 100px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            border-right: 1px solid #4e4e4e ;
+            float: left;
+        }
+        .center_3_last_1 img{
+            float: left;
+        }
+        .div_p{
+            float: left;
+        }
+        .center_3_last_2{
+            width: 22%;
+        }
+        .center_3_last_2 img{
+            float: left;
+        }
+        .center_3_last_3{
+            width: 22%;
+        }
+        .center_3_last_3 img{
+            float: left;
+        }
+
+        .bottomone{
+        margin-top: 10px;
+    }
+     .bottomone b{
+        float: left;
+        display: block;
+        width: 100px;
+        padding: 65px;
+        color: white;
+        list-style: none;
+        margin-left: 30px;
+        
+    }
+    .bottomone span{
+        
+        float: left;
+        display: block;
+        width: 100px;
+        padding-top: 20px;
+        padding-left:65px ;
+        padding-right: 65px ;
+        color: white;
+        list-style: none;
+        margin-left: 30px;
+        line-height: 20px; 
+    } 
+    .bottomtwo span{
+        
+        float: left;
+        display: block;
+        width: 1000px;
+        padding-top: 20px;
+        padding-left:35px ;
+        padding-right: 65px ;
+        color: white;
+        list-style: none;
+        margin-left: 30px;
+        line-height: 20px; 
+    } 
+    .tupian{
+        width: 200px;
+        height: 400px;    
+    }
+    .tupian img{
+        width: 100%;
+        height: 100%;
+        transition: all 0.6s;    
+        cursor: pointer;
+    }
+    .tupiantwo img:hover{
+        transform: scale(1.5);     
+    }
+        
+    </style>
+</head>
+<body class="bg_body">
+        <div class="title">
+            <img src="webimage/biaozhi.png" alt="picture1"/>
+            <ul class="ul_title">
+                <li><a href="huawei.html">首页</a> </li>
+                <li><a href="shouji.html">智能手机</a> </li>
+                <li><a href="bijiben.html">笔记本</a> </li>
+                <li><a href="pingban.html">平板</a></li>
+                <li><a href="chuandai.html">穿戴设备</a> </li>
+                <li><a href="gengduo.html">更多产品</a></li>
+                <li><a href="emui11.html">EMUI11</a></li>
+                <li><a href="fuwu.html">关于华为</a></li>
+                <li id="li_last"> <a href="denglu.html">登录</a> </li>
+                <li id="li_last"><a href="zhuce.html">注册</a> </li>
+            </ul>
+            <input class="in_title" type="text" value="&nbsp;&nbsp;mate 40pro"/>
+            <div class="sousuo_div">
+                <button>搜索</button>
+            </div>
+        </div>
+        <!-- 实现轮播图 -->
+        <div id="container">
+            <div id="photo">
+
+                <img src="webimage\title.jpg" />
+                <img src="webimage\hwcloud-1111-p4.jpg" />
+                <img src="webimage\hwcloud-techwave-industrial2.jpg" />
+                
+            </div>
+        </div>
+    
+        <div class="center_2">
+            <img src="webimage\watchgt-2-pro.png" alt="picture4" />
+            <img src="webimage\freebuds-pro_img.png" alt="picture5" />
+        </div>
+        <div class="center_3">
+            <h2>寻 找 华 为</h2>
+            <div class="center_3_left">
+                <p class="center_3_left_1">400+</p>
+                <p class="center_3_left_2">体验店</p>
+            </div>
+            <div class="center_3_center">
+                <p class="center_3_left_1">10000+</p>
+                <p class="center_3_left_2">销售门店</p>
+            </div>
+            <div  style="border-style: none;" class="center_3_right">
+                <p class="center_3_left_1">1000+</p>
+                <p class="center_3_left_2">用户服务中心</p>
+            </div>
+            <div class="center_3_under">
+                    <select style="margin-left: 40px">
+                        <option class="center_3_op">选择省份</option>
+                        <option class="center_3_op">辽宁省</option>
+                        <option class="center_3_op">河北省</option>
+                        <option class="center_3_op">北京市</option>
+                        <option class="center_3_op">上海市</option>
+                        <option class="center_3_op">深圳市</option>
+                        <option class="center_3_op">广东省</option>
+                        <option class="center_3_op">山东省</option>
+                        <option class="center_3_op">山西省</option>
+                    </select>
+                    <select>
+                        <option class="center_3_op">选择城市</option>
+                        <option class="center_3_op">沈阳市</option>
+                        <option class="center_3_op">大连市</option>
+                        <option class="center_3_op">盘锦市</option>
+                        <option class="center_3_op">天津市</option>
+                        <option class="center_3_op">石家庄市</option>
+                        <option class="center_3_op">唐山市</option>
+                        <option class="center_3_op">邯郸市</option>
+                        <option class="center_3_op">衡水市</option>
+                        <option class="center_3_op">张家口市</option>
+                    </select>
+                    <select>
+                        <option class="center_3_op">可选项：选择区（县）</option>
+                        <option class="center_3_op">皇姑区</option>
+                        <option class="center_3_op">和平区</option>
+                        <option class="center_3_op">桃城区</option>
+                        <option class="center_3_op">浑南区</option>
+                        <option class="center_3_op">铁西区</option>
+                        <option class="center_3_op">通州区</option>
+                        <option class="center_3_op">朝阳区</option>
+                        <option class="center_3_op">西城区</option>
+                        <option class="center_3_op">东城区</option>
+                        <option class="center_3_op">海淀区</option>
+                    </select>
+                    <div class="center_3_text">
+                        <input class="center_3_input" type="text" value="查找零售店"/>
+                        <span>或</span>
+                        <input class="center_3_input" type="text" value="查找服务中心"/>
+                    </div>
+            </div>
+            <div class="center_3_last">
+                <div class="center_3_last_1">
+                    <img src="webimage/flagone.png" alt="picture8"/>
+                    <div class="div_p">
+                        <p>服务热线</p>
+                        <p>400-830-8300/ 800-830-8300(座机)</p>
+                        <p>普通话7*24小时</p>
+                    </div>
+
+                </div>
+                <div class="center_3_last_2">
+                    <img src="webimage/flagtwo.png" alt="picture9"/>
+                    <div class="div_p">
+                        <p style="font-size: 20px;margin-top: 23px;margin-left: 20px;">微信客服</p>
+                    </div>
+                </div>
+                <div  style="border-style: none;" class="center_3_last_3">
+                    <img src="webimage/flagthree.png" alt="picture10"/>
+                    <div class="div_p">
+                        <p style="font-size: 20px;margin-top: 23px;margin-left: 20px;">在线客服</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 底部介绍 -->
+    <div>
+        <hr style="width: 95%;">
+        <div class="bottomone">  <b>购买产品</b> <b>服务与支持</b> <b>应用与下载</b> <b>新闻中心</b> <b>关于我们</b> </div>
+        <div class="bottomone"> <span>手机</span><span >保修政策</span><span>终端云服务</span><span>华为新闻</span><span>关于我们</span></div>
+        <div class="bottomone"> <span>笔记本</span><span>预约服务</span><span>PC软件</span><span>华为视频</span><span>生态合作伙伴</span></div>
+        <div class="bottomone"> <span>平板</span><span>EMUI产品</span><span>预制应用公示</span><span></span><span>可持续发展</span></div>
+        <div class="bottomone"> <span>智慧屏</span><span>保修查询</span><span>店面元素下载</span><span></span><span>华为商城</span></div>
+        <div class="bottomone"> <span>穿戴</span><span>维修价格</span><span>终端云服务</span><span></span><span>华为云</span></div>
+        <div class="bottomone"> <span>音频</span><span>维修进度</span><span></span><span></span><span>华为集团</span></div>
+        <div class="bottomone"> <span>路由器</span><span>联系我们</span><span></span><span></span><span>加入华为</span></div>
+    </div>
+    
+    <div class="bottomtwo">
+        
+        <span><br><br><br> 版权所有@华为终端有限公司1998——2020.保留一切权利。粤A2—20044005号</span>
+    </div>
+    
+        
+</body>
+</html>
