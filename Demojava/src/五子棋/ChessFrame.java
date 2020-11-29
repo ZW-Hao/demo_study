@@ -1,4 +1,4 @@
-package com.test;
+package 五子棋;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -12,7 +12,7 @@ import java.awt.event.WindowEvent;
 import javax.swing.*;
 
 /**
- * 功能描述: 作者: mistaker 邮箱: 2029635554@qq.com 创建时间: 2017年12月25日
+ * 功能描述:JAVA期末作业 五子棋实现
  *************************************
  */
 
@@ -227,12 +227,12 @@ class ChessModel{
 	   }
 	}
 	
-//	获取是否交换棋手的标识符
+
 	public boolean getisOdd(){
 	   return this.isOdd;
 	}
 
-//	设置交换棋手的标识符
+
 	public void setisOdd(boolean isodd){
 	   if(isodd)
 	    this.isOdd=true;
@@ -364,7 +364,7 @@ class ChessModel{
 	   int num=0,max_num,max_temp=0;
 	   int x_temp=x,y_temp=y;
 	   int x_temp1=x_temp,y_temp1=y_temp;
-//	   判断右边
+//	   判断右边棋子的最大值
 	   for(int i=1;i<5;i++){
 	    x_temp1+=1;
 	    if(x_temp1>this.width)
@@ -374,7 +374,7 @@ class ChessModel{
 	    else
 	     break;
 	   }
-//	    判断左边
+//	    判断左边棋子的最大值
 	   x_temp1=x_temp;
 	   for(int i=1;i<5;i++){
 	    x_temp1-=1;
@@ -388,7 +388,7 @@ class ChessModel{
 	   if(num<5)
 	    max_temp=num;
 
-//	    判断上面
+//	    判断上面棋子的最大值
 	   x_temp1=x_temp;
 	   y_temp1=y_temp;
 	   num=0;
@@ -401,7 +401,7 @@ class ChessModel{
 	    else
 	     break;
 	   }
-//	    判断下面
+//	    判断下面棋子的最大值
 	   y_temp1=y_temp;
 	   for(int i=1;i<5;i++){
 	    y_temp1+=1;
@@ -415,7 +415,7 @@ class ChessModel{
 	   if(num>max_temp&&num<5)
 	    max_temp=num;
 
-//	    判断左上方
+//	    判断左上方棋子的最大值
 	   x_temp1=x_temp;
 	   y_temp1=y_temp;
 	   num=0;
@@ -429,7 +429,7 @@ class ChessModel{
 	    else
 	     break;
 	   }
-//	    判断右下方
+//	    判断右下方棋子的最大值
 	   x_temp1=x_temp;
 	   y_temp1=y_temp;
 	   for(int i=1;i<5;i++){
@@ -445,7 +445,7 @@ class ChessModel{
 	   if(num>max_temp&&num<5)
 	    max_temp=num;
 
-//	    判断右上方
+//	    判断右上方棋子的最大值
 	   x_temp1=x_temp;
 	   y_temp1=y_temp;
 	   num=0;
@@ -459,7 +459,7 @@ class ChessModel{
 	    else
 	     break;
 	   }
-//	    判断左下方
+//	    判断左下方棋子的最大值
 	   x_temp1=x_temp;
 	   y_temp1=y_temp;
 	   for(int i=1;i<5;i++){

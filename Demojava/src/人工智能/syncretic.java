@@ -18,12 +18,7 @@ public class syncretic {
 
     public static void main(String[] args) {
         //将集合中的元素存储起来
-        /*gongshi_one.add("a");
-        gongshi_one.add("x");
-        gongshi_one.add("f(g(y))");
-        gongshi_two.add("z");
-        gongshi_two.add("h(z,u)");
-        gongshi_two.add("f(u)");*/
+
 
         gongshi_one.add("u");
         gongshi_one.add("y");
