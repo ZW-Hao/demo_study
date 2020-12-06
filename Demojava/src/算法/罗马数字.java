@@ -3,7 +3,7 @@ package 算法;
 public class 罗马数字 {
 
     public static void main(String[] args) {
-        String s="IX";
+        String s="MMMCCIX";
         int result = romanToInt(s);
         System.out.println(result);
 
@@ -115,9 +115,7 @@ public class 罗马数字 {
 
         }
 
-        for (int i = 0; i < split.length; i++) {
-            System.out.println(split[i]);
-        }
+
         int result=0;
         for (int i = 0; i < split.length; i++) {
             if(split[i].equals("I")){
