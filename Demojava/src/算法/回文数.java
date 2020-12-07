@@ -25,7 +25,7 @@ public class 回文数 {
         if(x<0){
             return false;
         }
-        //计算出倒着读出的数的值，与x进行比较
+        //计算出倒着读出的数的值，与x进行比较,如果相等返回true 否则返回false
         int y=x;
         int num=0;
         while(y!=0){
