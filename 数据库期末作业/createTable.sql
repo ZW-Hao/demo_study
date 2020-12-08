@@ -4,7 +4,7 @@
 --     productId number(10),
 --     productName varchar(20),
 --     productInformation varchar(20),
---     categoryId number(10),
+--     sortId number(10),
 --     price number(10),
 --     supplierId number(10)
 -- );
@@ -32,16 +32,17 @@
 -- );
 
 -- 创建供应商表
-create table supplier(
-    supplierId number(5),
-    supplierName varchar(20),
-    phone varchar(11),
-    supplierAddress varchar(10)
-);
+-- create table supplier(
+--     supplierId number(5),
+--     supplierName varchar(20),
+--     phone varchar(11),
+--     supplierAddress varchar(10)
+-- );
 
--- 创建分类表
-create table productSort(
-    sortId number(10),
-    sortName varchar(20)
-);
+-- -- 创建分类表
+-- create table productSort(
+--     sortId number(10),
+--     sortName varchar(20)
+-- );
+
 

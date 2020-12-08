@@ -2,7 +2,7 @@
 --     productId ,
 --     productName ,
 --     productInformation ,
---     categoryId ,
+--     sortId ,
 --     price ,
 --     supplierId 
 -- )
@@ -11,7 +11,7 @@
 --     productId ,
 --     productName ,
 --     productInformation ,
---     categoryId ,
+--     sortId ,
 --     price ,
 --     supplierId 
 -- )
@@ -21,7 +21,7 @@
 --     productId ,
 --     productName ,
 --     productInformation ,
---     categoryId ,
+--     sortId ,
 --     price ,
 --     supplierId 
 -- )
@@ -31,7 +31,7 @@
 --     productId ,
 --     productName ,
 --     productInformation ,
---     categoryId ,
+--     sortId ,
 --     price ,
 --     supplierId 
 -- )
@@ -41,7 +41,7 @@
 --     productId ,
 --     productName ,
 --     productInformation ,
---     categoryId ,
+--     sortId ,
 --     price ,
 --     supplierId 
 -- )
@@ -51,7 +51,7 @@
 --     productId ,
 --     productName ,
 --     productInformation ,
---     categoryId ,
+--     sortId ,
 --     price ,
 --     supplierId 
 -- )
@@ -125,44 +125,44 @@
 -- values(1,1,'mate40',123,'zhangsan','11/30',6999);
 
 
-insert into supplier(
-    supplierId ,
-    supplierName ,
-    phone ,
-    supplierAddress 
-)
-values(1,'phoneSupplier','4770699','shenzhen');
+-- insert into supplier(
+--     supplierId ,
+--     supplierName ,
+--     phone ,
+--     supplierAddress 
+-- )
+-- values(1,'phoneSupplier','4770699','shenzhen');
 
-insert into supplier(
-    supplierId ,
-    supplierName ,
-    phone ,
-    supplierAddress
-)
-values(2,'computerSupplier','4550019','guangzhou');
+-- insert into supplier(
+--     supplierId ,
+--     supplierName ,
+--     phone ,
+--     supplierAddress
+-- )
+-- values(2,'computerSupplier','4550019','guangzhou');
 
-insert into supplier(
-    supplierId ,
-    supplierName ,
-    phone ,
-    supplierAddress 
-)
-values(3,'padSupplier','4230999','shanghai');
+-- insert into supplier(
+--     supplierId ,
+--     supplierName ,
+--     phone ,
+--     supplierAddress 
+-- )
+-- values(3,'padSupplier','4230999','shanghai');
 
-insert into productSort(
-    sortId ,
-    sortName
-)
-values(1,'Phone');
+-- insert into productSort(
+--     sortId ,
+--     sortName
+-- )
+-- values(1,'Phone');
 
-insert into productSort(
-    sortId ,
-    sortName
-)
-values(2,'Computer');
+-- insert into productSort(
+--     sortId ,
+--     sortName
+-- )
+-- values(2,'Computer');
 
-insert into productSort(
-    sortId ,
-    sortName
-)
-values(3,'Pad');
+-- insert into productSort(
+--     sortId ,
+--     sortName
+-- )
+-- values(3,'Pad');
