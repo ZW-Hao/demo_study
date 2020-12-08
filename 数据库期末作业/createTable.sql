@@ -21,15 +21,15 @@
 -- );
 
 --创建订单表
--- create table orders(
---     orderId number(5),
---     productId number(5),
---     productName varchar(10),
---     userId number(10),
---     userName varchar(20),
---     orderTime varchar(20),
---     orderAmount number(10)
--- );
+create table orders(
+    orderId number(5),
+    productId number(5),
+    productName varchar(15),
+    userId number(10),
+    userName varchar(20),
+    orderTime varchar(20),
+    orderAmount number(10)
+);
 
 -- 创建供应商表
 -- create table supplier(

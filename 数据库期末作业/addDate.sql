@@ -57,6 +57,26 @@
 -- )
 -- values(6,'matebookPro','new computer',2,9999,2);
 
+-- insert into productTable(
+--     productId ,
+--     productName ,
+--     productInformation ,
+--     sortId ,
+--     price ,
+--     supplierId 
+-- )
+-- values(7,'matepad','new 5Gpad',3,3999,3);
+
+-- insert into productTable(
+--     productId ,
+--     productName ,
+--     productInformation ,
+--     sortId ,
+--     price ,
+--     supplierId 
+-- )
+-- values(8,'matepadpro','new 5Gpad',3,5999,3);
+
 -- insert into userTable(
 --      userId ,
 --     userPassword ,
@@ -124,6 +144,73 @@
 -- )
 -- values(1,1,'mate40',123,'zhangsan','11/30',6999);
 
+
+-- insert into orders(
+--     orderId ,
+--     productId ,
+--     productName,
+--     userId ,
+--     userName ,
+--     orderTime ,
+--     orderAmount
+-- )
+-- values(2,7,'matepad',123,'zhangsan','11/30',3999);
+
+-- insert into orders(
+--     orderId ,
+--     productId ,
+--     productName,
+--     userId ,
+--     userName ,
+--     orderTime ,
+--     orderAmount
+-- )
+-- values(3,2,'mate40Pro',125,'zhangwei','11/24',8999);
+
+
+-- insert into orders(
+--     orderId ,
+--     productId ,
+--     productName,
+--     userId ,
+--     userName ,
+--     orderTime ,
+--     orderAmount
+-- )
+-- values(4,5,'matebook14',126,'xiaomei','11/24',5299);
+
+-- insert into orders(
+--     orderId ,
+--     productId ,
+--     productName,
+--     userId ,
+--     userName ,
+--     orderTime ,
+--     orderAmount
+-- )
+-- values(5,5,'matebook14',124,'lisi','11/28',5299);
+
+-- insert into orders(
+--     orderId ,
+--     productId ,
+--     productName,
+--     userId ,
+--     userName ,
+--     orderTime ,
+--     orderAmount
+-- )
+-- values(6,3,'P40Pro',126,'xiaomei','11/29',5499);
+
+-- insert into orders(
+--     orderId ,
+--     productId ,
+--     productName,
+--     userId ,
+--     userName ,
+--     orderTime ,
+--     orderAmount
+-- )
+-- values(7,6,'matebookPro',127,'xiaohong','11/27',9999);
 
 -- insert into supplier(
 --     supplierId ,
