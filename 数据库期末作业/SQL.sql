@@ -24,8 +24,8 @@
 -- from userTable a,orders b
 -- where a.userId=b.userId and productName='matebook14';
 
-select phone,supplierAddress from supplier
-where supplierId=(
-    select supplierId from productTable
-    where productName='matepadpro'
-);
+-- select phone,supplierAddress from supplier
+-- where supplierId=(
+--     select supplierId from productTable
+--     where productName='matepadpro'
+-- );

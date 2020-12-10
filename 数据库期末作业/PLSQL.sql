@@ -1,99 +1,137 @@
 set ServerOutput ON;
--- declare
---     v_id productTable.productId%type;
---     v_name productTable.productName%type;
---     v_information productTable.productInformation%type;
---     v_sort productTable.sortId%type;
---     v_price productTable.Price%type;
---     v_supplier productTable.supplierId%type;
---      v_name_demo productTable.productName%type;
--- begin 
---     select productId,productName,productInformation,sortId,Price,supplierId
---     into v_id,v_name,v_information,v_sort,v_price,v_supplier
---     from productTable 
---     where productName='&v_name_demo';
---     dbms_output.put_line('id :'||v_id);
---     dbms_output.put_line('name :'||v_name);
---     dbms_output.put_line('information :'||v_information);
---     dbms_output.put_line('sortid :'||v_sort);
---     dbms_output.put_line('price :'||v_Price);
---     dbms_output.put_line('supplier :'||v_supplier);
+set linesize 1200;
+set pagesize 30;
 
--- end;
--- /
-
--- declare 
---     v_name_demo userTable.userName%type;--存储输入的用户名
---     v_userid_demo userTable.userId%type;--存储所输入的用户名的id
-
---     v_id orders.orderId%type;
---     v_productId orders.productId%type;
---     v_productName orders.productName%type;
---     v_userId orders.userId%type;
---     v_userName orders.userName%type;
---     v_time orders.orderTime%type;
---     v_amount orders.orderAmount%type;
-    
+--编写一个过程，输出手机类中的所有信息
+-- create or replace procedure p1
+-- as  cursor c is 
+--     select productId ,productName,productInformation,sortId,price,supplierId
+--     from productTable
+--     where sortId=(
+--             select sortId from productSort
+--             where sortName='Phone'
+--             );
 
 -- begin 
---     --只能返回一条信息
---     select userId 
---     into v_userid_demo
---     from userTable
---     where userName='&v_name_demo';
-    
 
---     select orderId,productId,productName,userId,userName,orderTime,orderAmount
---     into v_id,v_productId,v_productName,v_userId,v_userName,v_time,v_amount
---     from orders
---     where userId=v_userid_demo;
+--     for v_x in c 
+--     loop 
+--         dbms_output.put_line('---------------------------');
+--         dbms_output.put_line('productId: '||v_x.productId);
+--         dbms_output.put_line('productName: '||v_x.productName);
+--         dbms_output.put_line('productInformation: '||v_x.productInformation);
+--         dbms_output.put_line('sortId: '||v_x.sortId);
+--         dbms_output.put_line('price: '||v_x.price);
+--         dbms_output.put_line('supplierId: '||v_x.supplierId);
+       
 
---     dbms_output.put_line('orderId:  '||v_id);
---     dbms_output.put_line('productId:  '||v_productId);
---     dbms_output.put_line('productName:  '||v_productName);
---     dbms_output.put_line('userId:  '||v_userId);
---     dbms_output.put_line('userName:  '||v_userName);
---     dbms_output.put_line('orderTime:  '||v_time);
---     dbms_output.put_line('orderAmount:  '||v_amount);
-
--- end;
--- /
-
---使用游标进行改进
-
--- declare 
-
---     v_name_demo userTable.userName%type;--存储输入的用户名
---     v_userid_demo userTable.userId%type;--存储所输入的用户名的id
-
---     v_id orders.orderId%type;
---     v_productId orders.productId%type;
---     v_productName orders.productName%type;
---     v_userId orders.userId%type;
---     v_userName orders.userName%type;
---     v_time orders.orderTime%type;
---     v_amount orders.orderAmount%type;
-
---     cursor mycur(vid number) is
---     select productId
---     from orders
---     where vid=userId;
-    
-
--- begin 
-    
---     select userId 
---     into v_userid_demo
---     from userTable
---     where userName='&v_name_demo';
-
---     dbms_output.put_line(v_userid_demo);
---     for var_record in mycur('1')
---     loop
---         -- dbms_output.put_line(var_record.orderId);
---         dbms_output.put_line(var_record.productId);
 --     end loop;
 
+
 -- end;
 -- /
 
+-- create or replace function f1
+-- return varchar2
+-- as 
+--     v_productName varchar2(20);
+   
+-- begin 
+--     select productName 
+--     into v_productName
+--     from productTable
+--     where price=(
+--     select max(price) from productTable
+--     );
+--     return v_productName;
+-- end ;
+-- /
+
+-- begin 
+--     dbms_output.put_line('The most expensive product is ');
+--     dbms_output.put_line(f1);
+-- end ;
+-- /
+
+
+-- 编写一个过程，查找所有用户名中包含zhang的用户信息
+-- create or replace procedure p2
+-- as  cursor c is 
+--         select  userId,userPassword,userName,userAge,userSex,userAddress,userPhone
+--         from userTable
+--         where userName like '%zhang%';
+-- begin 
+
+--     for v_x in c 
+--     loop 
+
+--         dbms_output.put_line('---------------------------');
+--         dbms_output.put_line('userId: '||v_x.userId);
+--         dbms_output.put_line('userPassword: '||v_x.userPassword);
+--         dbms_output.put_line('userName: '||v_x.userName);
+--         dbms_output.put_line('userAge: '||v_x.userAge);
+--         dbms_output.put_line('userSex: '||v_x.userSex);
+--         dbms_output.put_line('userAddress: '||v_x.userAddress);
+--         dbms_output.put_line('userPhone: '||v_x.userPhone);
+       
+
+--     end loop;
+
+
+-- end;
+-- /
+
+
+-- declare 
+--         cursor c is
+--             select orderId,productId,productName,userId,userName,orderTime,orderAmount
+--             from orders
+--             where userName like 'zhangsan';
+-- begin
+--     for var_record in c
+--     loop
+
+--         dbms_output.put_line('------------------------------');
+--         dbms_output.put_line('orderId:  '||var_record.orderId);
+--         dbms_output.put_line('productId:  '||var_record.productId);
+--         dbms_output.put_line('productName:  '||var_record.productName);
+--         dbms_output.put_line('userId:  '||var_record.userId);
+--         dbms_output.put_line('userName:  '||var_record.userName);
+--         dbms_output.put_line('orderTime:  '||var_record.orderTime);
+--         dbms_output.put_line('orderAmount:  '||var_record.orderAmount);      
+--     end loop;
+
+-- end ;
+-- /
+
+--建立一个函数，输入一个商品名，查找到购买此商品的用户id、用户名、订单时间、订单金额
+
+create or replace function f2(v_name varchar2)
+return  varchar2
+as 
+    v_productName varchar2(20);
+    v_userid  number(10);
+    v_username varchar2(20);
+    v_time   varchar2(20);
+    v_amount  varchar2(20);
+   
+begin 
+    select a.userId,a.userName,b.orderTime,b.orderAmount
+    into   v_userid,v_username,v_time,v_amount
+    from userTable a,orders b
+    where a.userId=b.userId and productName=v_name;
+    
+    -- dbms_output.put_line(v_userid)
+    -- dbms_output.put_line(v_username)
+    -- dbms_output.put_line(v_time)
+    -- dbms_output.put_line(v_amount)
+    return 'null';
+end ;
+/
+
+begin 
+    f2('matebook14');
+end ;
+/
+
+--建立一个函数，输入一个商品名，查找到其供应商的id、姓名、电话、地址

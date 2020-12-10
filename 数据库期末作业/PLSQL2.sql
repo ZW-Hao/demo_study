@@ -1,4 +1,21 @@
-set ServerOutput ON;
+-- set ServerOutput ON;
+
+-- declare 
+--     cursor mycur(v number) is
+--     select productId,v_productName
+--     from productTable
+--     where price>5000;
+
+-- begin 
+--     --查信息
+--     for var_record in mycur(1)
+--     loop 
+--         dbms_output.put_line(var_record.productId);
+--         dbms_output.put_line(var_record.v_productName);
+--     end loop ;
+
+-- end;
+-- /
 -- declare
 --     v_id productTable.productId%type;
 --     v_name productTable.productName%type;
