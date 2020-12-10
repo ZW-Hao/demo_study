@@ -124,25 +124,38 @@ set ServerOutput ON;
 -- end;
 -- /
 
-declare
--- 输入一个用户名，若找到和他买相同产品的用户则输出用户信息，若找不到则返回无其他人购买此商品
--- 找到时输出用户信息
---若找不到相应的信息则应该输出null
-    v_name userTable.userName%type;--储存输入的用户名
-    -- 根据用户名找到购买的商品id，在查询购买此商品的用户信息，如果查找到购买这个商品的用户则输出相应的信息
-    --如果查找不到其他购买者，则返回无其他人购买此产品
+-- declare
 
-    cursor mycur(vid number) is
-    select 
+--     v_name userTable.userName%type;--储存输入的用户名
+--     v_productId orders.productId%type;
+
+
+--     cursor mycur(vid number) is
+--     select userName,userId
+--     from orders
+--     where vid=productId;
 
     
 
-begin 
+-- begin 
+
+--     select productId
+--     into v_productId
+--     from orders
+--     where userName='&v_name';
 
 
+--      dbms_output.put_line('all user who buy:  ');
+--     for var_record in mycur(v_productId)
+--     loop 
+        
+--         dbms_output.put_line('UserId:  '||var_record.userId||'  UserName:  '||var_record.userName);
 
-end;
-/
+--     end loop;
+
+
+-- end;
+-- /
     
 
     
