@@ -106,32 +106,126 @@ set pagesize 30;
 
 --建立一个函数，输入一个商品名，查找到购买此商品的用户id、用户名、订单时间、订单金额
 
-create or replace function f2(v_name varchar2)
-return  varchar2
-as 
-    v_productName varchar2(20);
-    v_userid  number(10);
-    v_username varchar2(20);
-    v_time   varchar2(20);
-    v_amount  varchar2(20);
+-- create or replace function f2
+-- return  varchar2
+-- as 
+--     cursor c is
+--         select a.userId,a.userName,orderTime,orderAmount
+--         from userTable a,orders b
+--         where a.userId=b.userId and productName='matebook14';
+
    
-begin 
-    select a.userId,a.userName,b.orderTime,b.orderAmount
-    into   v_userid,v_username,v_time,v_amount
-    from userTable a,orders b
-    where a.userId=b.userId and productName=v_name;
+-- begin 
     
-    -- dbms_output.put_line(v_userid)
-    -- dbms_output.put_line(v_username)
-    -- dbms_output.put_line(v_time)
-    -- dbms_output.put_line(v_amount)
-    return 'null';
-end ;
-/
+--     for var in c
+--     loop
 
-begin 
-    f2('matebook14');
-end ;
-/
+--     dbms_output.put_line('userId:  '||var.userId);
+--     dbms_output.put_line('userName:  '||var.userName);
+--     dbms_output.put_line('orderTime:  '||var.orderTime);
+--     dbms_output.put_line('orderAmount:  '||var.orderAmount);
+--     dbms_output.put_line('--------------------------');
 
---建立一个函数，输入一个商品名，查找到其供应商的id、姓名、电话、地址
+--     end loop;
+    
+--     -- dbms_output.put_line(v_userid)
+--     -- dbms_output.put_line(v_username)
+--     -- dbms_output.put_line(v_time)
+--     -- dbms_output.put_line(v_amount)
+--     return null;
+-- end ;
+-- /
+
+-- begin 
+--     dbms_output.put_line(f2);
+-- end ;
+-- /
+
+
+
+
+--建立一个函数，输入一个商品名，查找这个商品供应商的电话号码和地址信息
+
+-- create or replace function f3(v_name in varchar2)
+-- return  varchar2
+-- as 
+--     -- v_name varchar2(20);
+--     cursor c is
+--         select phone,supplierAddress 
+--         from supplier
+--         where supplierId=(
+--             select supplierId from productTable
+--             where productName=v_name
+--         );
+
+   
+-- begin 
+    
+--     for var in c
+--     loop
+--     dbms_output.put_line('--------------------------');
+--     dbms_output.put_line('phone:  '||var.phone);
+--     dbms_output.put_line('supplierAddress:  '||var.supplierAddress);
+
+--     end loop;
+    
+--     return null;
+-- end ;
+-- /
+
+-- begin 
+--     dbms_output.put_line(f3('&v_name'));
+-- end ;
+-- /
+
+-- create or replace trigger c
+-- after insert or delete or update
+-- on supplier
+-- begin 
+--     dbms_output.put_line('changes happened  '||sysdate);
+-- end;
+-- /
+
+-- insert into supplier(
+--     supplierId ,
+--     supplierName ,
+--     phone ,
+--     supplierAddress 
+-- )
+-- values(4,'padSupplier','4230999','shanghai');
+
+
+--当用户id发生改变时，订单表中的用户id也要同时更新
+-- create or replace trigger d
+-- after update
+-- on userTable
+-- for each row
+
+-- begin 
+--     update orders
+--     set userName =:new.userName
+--     where userName=:old.userName;
+
+-- end;
+-- /
+
+
+--创建序列
+
+-- create sequence userTable_seq
+-- increment by 1
+-- start with 123;
+
+-- create sequence productTable_seq
+-- increment by 1
+-- start with 1;
+
+-- 创建视图，查询商品id 商品名 供应商名称，供应商电话
+-- create view v1 as 
+-- select productId,productName,supplierName,phone
+-- from productTable,supplier
+-- where productTable.sortId=supplier.supplierId;
+
+
+-- select * from v1;
+
