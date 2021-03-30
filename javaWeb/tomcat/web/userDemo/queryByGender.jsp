@@ -75,43 +75,23 @@
         <a class="btn btn-primary" href="javascript:void(0);" id="deleteSelect">删除选中</a>
 
     </div>
-
-    <div class="row">
-        <div class="col-md-4">
-            <%--通过姓名进行查询--%>
-            <div>
-                <form class="form-inline" action="${pageContext.request.contextPath}/queryUserrServlet" method="post">
-                    <div class="form-group">
-                        <label for="exampleInputName2">姓名</label>
-                        <input type="text" class="form-control" id="exampleInputName2" name="name">
-                    </div>
-
-                    <button type="submit" class="btn btn-default">查询</button>
-                </form>
+    <div>
+        <form class="form-inline" action="${pageContext.request.contextPath}/queryUserrServlet" method="post">
+            <div class="form-group">
+                <label for="exampleInputName2">姓名</label>
+                <input type="text" class="form-control" id="exampleInputName2" name="name">
             </div>
-        </div>
-        <div class="col-md-4">
-            <%--通过性别进行查询--%>
-            <div>
-                <form class="form-inline" action="${pageContext.request.contextPath}/queryUserBySexServlet" method="post">
-
-                    <div class="form-group">
-                        <label for="exampleInputName3">性别</label>
-                        <input type="text" class="form-control" id="exampleInputName3" name="gender">
-                    </div>
-
-                    <button type="submit" class="btn btn-default">查询</button>
-                </form>
+            <div class="form-group">
+                <label for="exampleInputName3">性别</label>
+                <input type="text" class="form-control" id="exampleInputName3">
             </div>
-        </div>
+            <div class="form-group">
+                <label for="exampleInputEmail2">Email</label>
+                <input type="email" class="form-control" id="exampleInputEmail2">
+            </div>
+            <button type="submit" class="btn btn-default">查询</button>
+        </form>
     </div>
-
-
-
-
-
-
-
     <%--通过表单提交来获取需要删除的id值--%>
     <form id="userForm" action="${pageContext.request.contextPath}/delSeleteUser" method="post">
         <table border="1" class="table table-bordered table-hover">
@@ -126,7 +106,7 @@
                 <th>邮箱</th>
                 <th>操作</th>
             </tr>
-            <c:forEach items="${pb.list}" var="user" varStatus="s">
+            <c:forEach items="${queryUserByGender.list}" var="user" varStatus="s">
                 <tr>
                     <th><input type="checkbox" name="uid" value="${user.id}"></th>
                     <td>${s.count}</td>
@@ -148,41 +128,41 @@
         <nav aria-label="Page navigation">
             <ul class="pagination">
 
-                <c:if test="${pb.currentPage==1}">
+                <c:if test="${queryUserByGender.currentPage==1}">
                     <li class="disabled">
                 </c:if>
-                <c:if test="${pb.currentPage!=1}">
+                <c:if test="${queryUserByGender.currentPage!=1}">
                     <li >
                 </c:if>
 
-                    <a href="${pageContext.request.contextPath}/findUserByPageServlet?currentPage=${pb.currentPage-1}&rows=5"
+                    <a href="${pageContext.request.contextPath}/queryUserrServlet?currentPage=${queryResult.currentPage-1}&rows=5"
                        aria-label="Previous">
                         <span aria-hidden="true">&laquo;</span>
                     </a>
                 </li>
-                <c:forEach begin="1" end="${pb.totalPage}" var="i">
-                    <c:if test="${pb.currentPage==i}">
+                <c:forEach begin="1" end="${queryUserByGender.totalPage}" var="i">
+                    <c:if test="${queryUserByGender.currentPage==i}">
                         <li class="active"><a
-                                href="${pageContext.request.contextPath}/findUserByPageServlet?currentPage=${i}&rows=5">${i}</a>
+                                href="${pageContext.request.contextPath}/queryUserrServlet?currentPage=${i}&rows=5">${i}</a>
                         </li>
                     </c:if>
 
-                    <c:if test="${pb.currentPage!=i}">
+                    <c:if test="${queryUserByGender.currentPage!=i}">
                         <li>
-                            <a href="${pageContext.request.contextPath}/findUserByPageServlet?currentPage=${i}&rows=5">${i}</a>
+                            <a href="${pageContext.request.contextPath}/queryUserrServlet?currentPage=${i}&rows=5">${i}</a>
                         </li>
                     </c:if> </c:forEach>
 
 
                 <li>
-                    <a href="${pageContext.request.contextPath}/findUserByPageServlet?currentPage=${pb.currentPage+1}&rows=5"
+                    <a href="${pageContext.request.contextPath}/queryUserrServlet?currentPage=${queryResult.currentPage+1}&rows=5"
                        aria-label="Next">
                         <span aria-hidden="true">&raquo;</span>
                     </a>
                 </li>
                 <br><br>
                 <span>
-                    共${pb.totalCount}条记录，共${pb.totalPage}页
+                    共${queryUserByGender.totalCount}条记录，共${queryUserByGender.totalPage}页
                 </span>
             </ul>
         </nav>
